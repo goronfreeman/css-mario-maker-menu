@@ -1,0 +1,454 @@
+// Compile this
+
+// Variables
+
+$bg: #fff;
+$header-bg: #262745;
+$difficulty-bg: #6e262a;
+$map-bg: #f4a838;
+$arrow-bg: #e8f045;
+$checker: #f0a224;
+$path: #fbc460;
+$level-circle: #269899;
+
+// Text
+$header-text: #eaf4fd;
+$btn-new-game-text: #00a8b5;
+$btn-active-text: #fde9e8;
+
+// Buttons
+$header-btn-bg: #ffdb00;
+$btn-active: #450100;
+$difficulty-btn-bg: #b64645;
+$difficulty-accent: #5c1b19;
+$btn-new-game: #feef6e;
+
+// Flower
+$flower-center: #f7da26;
+$flower-petal: #f87b38;
+$flower-leaf: #f98538;
+
+// Castle
+$castle-roof: #c94e60;
+$castle-window: #e18963;
+$castle-main: #f0d0a9;
+$castle-accent: #fff7e2;
+
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+@font-face {
+  font-family: 'Super-Mario-Maker';
+  src: url('fonts/Super-Mario-Maker.eot') format('embedded-opentype'), url('fonts/Super-Mario-Maker.woff') format('woff'), url('fonts/Super-Mario-Maker.ttf') format('truetype'), url('fonts/Super-Mario-Maker.svg#Super-Mario-Maker') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.artboard {
+  box-sizing: border-box;
+  width: 1280px;
+  height: 720px;
+  background: $bg;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+header {
+  background: $header-bg;
+  color: $header-text;
+  font-family: 'Super-Mario-Maker';
+  font-size: 21px;
+  height: 80px;
+  padding-left: 14px;
+  padding-right: 14px;
+  text-align: center;
+}
+
+h1 {
+  display: inline;
+  line-height: 80px;
+  margin: 0;
+}
+
+.btn {
+  background: $header-btn-bg;
+  width: 63px;
+  height: 61px;
+  border-radius: 10px;
+  margin-top: 9px;
+  box-shadow: 0 7px 0 1px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  position: relative;
+}
+
+.btn--profile {
+  float: left;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  img {
+    height: auto;
+    width: 63px;
+    @include vertical-center;
+  }
+}
+
+.btn--menu {
+  float: right;
+  border: 5px solid #fff;
+  box-sizing: border-box;
+}
+
+.hamburger {
+  width: 39px;
+  margin: 0 auto;
+  @include vertical-center;
+}
+
+.line {
+  width: 39px;
+  border-bottom: 7px solid #fff;
+  background: #fff;
+  margin-bottom: 4px;
+  border-radius: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.line--short {
+  width: 11px;
+  border-bottom: 2px solid #000;
+  margin: 0 auto;
+  @include vertical-center;
+}
+
+.circle {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 3px solid #000;
+  background: #fff;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid $arrow-bg;
+  box-shadow: 0 7px 0 1px rgba(0, 0, 0, .1);
+  @include vertical-center;
+  animation: moveUpDown 350ms ease-in-out alternate infinite;
+}
+
+.arrow-up--left {
+  float: left;
+  margin-left: 35px;
+  margin-right: 10px;
+}
+
+.arrow-up--right {
+  float: right;
+  margin-right: 35px;
+}
+
+.ufo {
+  height: 48px;
+  float: left;
+  width: 70px;
+  background: url('../img/ufo-sprite.png') top center;
+  animation: ufoSpin 400ms steps(4) infinite;
+}
+
+.ufo--outer {
+  animation: moveUpDown 400ms ease-in-out alternate infinite;
+  @include vertical-center;
+}
+
+.difficulty {
+  background: $difficulty-bg;
+  height: 113px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.btn--difficulty {
+  display: inline-block;
+  background: $difficulty-btn-bg;
+  color: $difficulty-accent;
+  font-size: 30px;
+  font-family: 'Varela Round';
+  width: 307px;
+  height: 53px;
+  margin-top: 14px;
+  margin-right: 4px; // should be 8px
+  text-align: center;
+  line-height: 53px;
+  transition: all 100ms ease-in-out;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background: $btn-active;
+    color: $btn-active-text;
+    transform: translateY(-4px);
+    box-shadow: none;
+  }
+}
+
+.map {
+  background-color: $map-bg;
+  background-image: radial-gradient($checker 15%, transparent 16%), radial-gradient($checker 15%, transparent 16%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  height: 100%;
+  position: relative;
+}
+
+.path {
+  position: relative;
+  top: 200px;
+  left: 250px;
+}
+
+li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $path;
+  margin: 0 36px;
+  display: inline-block;
+  position: relative;
+}
+
+li::before{
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: -78px;
+  width: 80px;
+  height: 6px;
+  background: $path;
+}
+
+.flower {
+  position: relative;
+}
+
+.flower__one {
+  top: 230px;
+  left: 220px;
+}
+
+.flower__two {
+  top: 50px;
+  left: 450px;
+}
+
+.flower__three {
+  top: 350px;
+  left: 700px;
+}
+
+.flower__four {
+  top: 100px;
+  left: 1100px;
+}
+
+.flower__center {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: $flower-center;
+  z-index: 2;
+  position: relative;
+}
+
+.flower__petal {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: $flower-petal;
+  position: relative;
+
+  &:nth-child(2) {
+    top: -14px;
+    left: -5px;
+  }
+
+  &:nth-child(3) {
+    top: -23px;
+    left: 5px;
+  }
+
+  &:nth-child(4) {
+    top: -22px;
+    left: 5px;
+  }
+
+  &:nth-child(5) {
+    top: -31px;
+    left: -5px;
+  }
+}
+
+.flower__top {
+  position: absolute;
+  animation: rotateLeftRight 500ms ease-in-out infinite alternate;
+}
+
+.flower__leaf {
+  width: 12px;
+  height: 12px;
+  background-color: $flower-leaf;
+  border-radius: 100px 0;
+  position: relative;
+  animation: rotateUpDown 300ms ease-in-out infinite;
+
+  &:first-child {
+    left: 8px;
+    top:  20px;
+    animation-direction: alternate;
+    transform-origin: bottom left;
+  }
+
+  &:last-child {
+    left: -8px;
+    top: 8px;
+    animation-direction: alternate-reverse;
+    transform-origin: bottom right;
+  }
+}
+
+.flower__leaf--left {
+  border-radius: 0 100px;
+}
+
+.infobox {
+  width: 160px;
+  height: 80px;
+  background: rgba(0, 0, 0, .17);
+  border-radius: 25px;
+  font-family: 'Super-Mario-Maker';
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 15px;
+  left: 200px;
+
+  img {
+    width: 25px;
+    height: auto;
+  }
+}
+
+.infobox__content {
+  margin: 0 auto;
+}
+
+.level__icon {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: $level-circle;
+  box-sizing: border-box;
+  border: 3px solid #fff;
+}
+
+@keyframes moveUpDown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotateUpDown {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes rotateLeftRight {
+  from {
+    transform: rotate(-20deg);
+  }
+
+  to {
+    transform: rotate(20deg);
+  }
+}
+
+.container {
+  position: absolute;;
+  padding: 8px 8px 32px 8px;
+  background: rgba(0, 0, 0, .17);
+  font-family: 'Varela Round';
+  font-size: 24px;
+  color: #fff;
+  padding: 10px 50px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.btn--new-game {
+  width: 336px;
+  height: 68px;
+  line-height: 68px;
+  text-align: center;
+  font-size: 35px;
+  float: right;
+  background: $btn-new-game;
+  color: $btn-new-game-text;
+}
+
+.castle {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
+
+.tower {
+  height: 30px;
+  width: 20px;
+  background: $castle-main;
+}
+
+.tower--left {
+  float: left;
+  // transform: rotate(-5deg);
+}
+
+.tower--right {
+  float: right;
+}
+
+@keyframes ufoSpin {
+  100% {
+    background-position: center 192px;;
+  }
+}
