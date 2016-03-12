@@ -1,10 +1,10 @@
 // Compile this
 
-@import 'variables';
-@import 'animations';
-@import 'header';
-@import 'difficulty';
-@import 'map';
+@import 'includes/variables';
+@import 'includes/animations';
+@import 'includes/sections/header';
+@import 'includes/sections/difficulty';
+@import 'includes/sections/map';
 
 .artboard {
   box-sizing: border-box;
