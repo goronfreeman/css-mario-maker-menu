@@ -1,0 +1,117 @@
+header {
+  background: $header-bg;
+  color: $header-text;
+  font-family: 'Super-Mario-Maker';
+  font-size: 21px;
+  height: 80px;
+  padding-left: 14px;
+  padding-right: 14px;
+  text-align: center;
+}
+
+h1 {
+  display: inline;
+  line-height: 80px;
+  margin: 0;
+}
+
+.btn {
+  background: $header-btn-bg;
+  width: 63px;
+  height: 61px;
+  border-radius: 10px;
+  margin-top: 9px;
+  box-shadow: 0 7px 0 1px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  position: relative;
+}
+
+.btn--profile {
+  float: left;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  img {
+    height: auto;
+    width: 63px;
+    @include vertical-center;
+  }
+}
+
+.btn--menu {
+  float: right;
+  border: 5px solid #fff;
+  box-sizing: border-box;
+}
+
+.hamburger {
+  width: 39px;
+  margin: 0 auto;
+  @include vertical-center;
+}
+
+.line {
+  width: 39px;
+  border-bottom: 7px solid #fff;
+  background: #fff;
+  margin-bottom: 4px;
+  border-radius: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.line--short {
+  width: 11px;
+  border-bottom: 2px solid #000;
+  margin: 0 auto;
+  @include vertical-center;
+}
+
+.circle {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 3px solid #000;
+  background: #fff;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid $arrow-bg;
+  box-shadow: 0 7px 0 1px rgba(0, 0, 0, .1);
+  @include vertical-center;
+  animation: moveUpDown 350ms ease-in-out alternate infinite;
+}
+
+.arrow-up--left {
+  float: left;
+  margin-left: 35px;
+  margin-right: 10px;
+}
+
+.arrow-up--right {
+  float: right;
+  margin-right: 35px;
+}
+
+.ufo {
+  height: 48px;
+  width: 70px;
+  float: left;
+  background: url('../img/ufo-sprite.png') top center;
+  animation: ufoSpin 400ms steps(4) infinite;
+}
+
+.ufo--outer {
+  animation: moveUpDown 400ms ease-in-out alternate infinite;
+  @include vertical-center;
+}

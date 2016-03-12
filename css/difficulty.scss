@@ -1,0 +1,32 @@
+.difficulty {
+  background: $difficulty-bg;
+  height: 113px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.btn--difficulty {
+  display: inline-block;
+  background: $difficulty-btn-bg;
+  color: $difficulty-accent;
+  font-size: 30px;
+  font-family: 'Varela Round';
+  width: 307px;
+  height: 53px;
+  margin-top: 14px;
+  margin-right: 4px; // should be 8px
+  text-align: center;
+  line-height: 53px;
+  transition: all 100ms ease-in-out;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background: $btn-active;
+    color: $btn-active-text;
+    transform: translateY(-4px);
+    box-shadow: none;
+  }
+}

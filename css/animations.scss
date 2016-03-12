@@ -1,0 +1,36 @@
+@keyframes ufoSpin {
+  100% {
+    background-position: center 192px;;
+  }
+}
+
+
+@keyframes moveUpDown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotateUpDown {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes rotateLeftRight {
+  from {
+    transform: rotate(-20deg);
+  }
+
+  to {
+    transform: rotate(20deg);
+  }
+}

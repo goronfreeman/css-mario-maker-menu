@@ -1,0 +1,46 @@
+$bg: #fff;
+$header-bg: #262745;
+$difficulty-bg: #6e262a;
+$map-bg: #f4a838;
+$arrow-bg: #e8f045;
+$checker: #f0a224;
+$path: #fbc460;
+$level-circle: #269899;
+
+// Text
+$header-text: #eaf4fd;
+$btn-new-game-text: #00a8b5;
+$btn-active-text: #fde9e8;
+
+// Buttons
+$header-btn-bg: #ffdb00;
+$btn-active: #450100;
+$difficulty-btn-bg: #b64645;
+$difficulty-accent: #5c1b19;
+$btn-new-game: #feef6e;
+
+// Flower
+$flower-center: #f7da26;
+$flower-petal: #f87b38;
+$flower-leaf: #f98538;
+
+// Castle
+$castle-roof: #c94e60;
+$castle-window: #e18963;
+$castle-main: #f0d0a9;
+$castle-accent: #fff7e2;
+
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+@font-face {
+  font-family: 'Super-Mario-Maker';
+  src: url('fonts/Super-Mario-Maker.eot') format('embedded-opentype'), url('fonts/Super-Mario-Maker.woff') format('woff'), url('fonts/Super-Mario-Maker.ttf') format('truetype'), url('fonts/Super-Mario-Maker.svg#Super-Mario-Maker') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
