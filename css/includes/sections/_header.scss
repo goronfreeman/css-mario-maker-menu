@@ -1,3 +1,5 @@
+// main: ../../main.scss
+
 header {
   background: $header-bg;
   color: $header-text;
@@ -109,6 +111,7 @@ h1 {
   float: left;
   background: url('../img/ufo-sprite.png') top center;
   animation: ufoSpin 400ms steps(4) infinite;
+  @include vertical-center;
 }
 
 .ufo--outer {

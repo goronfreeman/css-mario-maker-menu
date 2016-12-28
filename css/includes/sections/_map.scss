@@ -1,10 +1,12 @@
+// main: ../../main.scss
+
 .map {
   background-color: $map-bg;
   background-image: radial-gradient($checker 15%, transparent 16%), radial-gradient($checker 15%, transparent 16%);
   background-size: 16px 16px;
   background-position: 0 0, 8px 8px;
-  height: 100%;
   position: relative;
+  height: 100%;
 }
 
 .path {
@@ -23,7 +25,7 @@ li {
   position: relative;
 }
 
-li::before{
+li::before {
   content: '';
   position: absolute;
   top: 7px;
@@ -35,6 +37,7 @@ li::before{
 
 .flower {
   position: relative;
+  width: 0;
 }
 
 .flower__one {
@@ -182,25 +185,184 @@ li::before{
   color: $btn-new-game-text;
 }
 
+// Castle
+
 .castle {
   width: 150px;
   height: 150px;
   position: relative;
   top: 100px;
   left: 100px;
+  // outline: 1px solid #fff;
 }
 
-.tower {
-  height: 30px;
+.tower__main {
+  height: 25px;
   width: 20px;
-  background: $castle-main;
+  background: $castle-tower;
+  position: relative;
+  left: 2px;
 }
 
 .tower--left {
-  float: left;
-  // transform: rotate(-5deg);
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  transform: rotate(-3deg);
 }
 
 .tower--right {
-  float: right;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(3deg);
+}
+
+.tower__top {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 26px solid $castle-roof;
+}
+
+.flag__pole {
+  height: 20px;
+  width: 3px;
+  background: $castle-accent;
+  position: relative;
+  top: 2px;
+  left: 11px;
+  border-radius: 0 0 1px 1px;
+}
+
+.flag__banner {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-left: 20px solid $castle-accent;
+  border-bottom: 7px solid transparent;
+  position: relative;
+  top: 18px;
+  left: 13px;
+}
+
+.flag__top {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: $castle-main;
+  position: relative;
+  top: 15px;
+  left: 8px;
+}
+
+.tower {
+  z-index: 2;
+}
+
+.tower__bottom {
+  width: 24px;
+  height: 11px;
+  background: $castle-accent;
+}
+
+.stripe {
+  width: 100%;
+  height: 2px;
+  background: $castle-roof;
+  position: relative;
+}
+
+.tower__bottom__stripe {
+  top: 3px;
+}
+
+.tower__window {
+  height: 11px;
+  width: 7px;
+  background: $castle-window;
+  margin: 0 auto;
+  @include vertical-center;
+}
+
+.castle__bottom {
+  height: 5px;
+  width: 100%;
+  background: $castle-bottom;
+  position: absolute;
+  bottom: 0;
+}
+
+.castle__entrance {
+  width: 35px;
+  height: 42px;
+  position: absolute;
+  bottom: 5px;
+  left: calc(50% - 35px/2);
+  margin: 0 auto;
+  border-radius: 35px 35px 0 0;
+  background: $castle-accent;
+  z-index: 2;
+}
+
+.castle__entrance__door {
+  height: 20px;
+  width: 16px;
+  border-radius: 16px 16px 0 0;
+  background: $castle-roof;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 16px/2);
+}
+
+.castle__entrance__window {
+  height: 15px;
+  width: 10px;
+  border-radius: 10px 10px 0 0;
+  background: $castle-blue;
+  position: absolute;
+  top: 4px;
+  left: calc(50% - 10px/2);
+}
+
+.castle__main__bottom {
+  width: 100px;
+  height: 30px;
+  background: $castle-main;
+  position: absolute;
+  left: calc(50% - 100px/2);
+  bottom: 5px;
+}
+
+.castle__main__bottom__stripe {
+  top: 25px;
+}
+
+.castle__main__top {
+  width: 100px;
+  height: 15px;
+  border-radius: 15px 15px 0 0;
+  background: $castle-roof;
+  position: absolute;
+  left: calc(50% - 100px/2);
+  bottom: 35px;
+}
+
+.castle__second-floor {
+  width: 32px;
+  height: 20px;
+  background: $castle-tower;
+  position: relative;
+  left: calc(50% - 32px/2);
+  top: 80px;
+}
+
+.castle__second-floor__window {
+  width: 12px;
+  height: 14px;
+  border-radius: 14px 14px 0 0;
+  background: $castle-window;
+  left: calc(50% - 14px/2);
+  position: relative;
 }
